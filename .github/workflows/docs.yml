@@ -11,7 +11,7 @@ jobs:
         with:
           mdbook-version: 'latest'
       - run: git clone https://github.com/emuell/luals-docs-gen.git
-      - run: cargo run --release -- ../docs ../docs/src
+      - run: cargo run --release -- ../luyoga ../docs/src
         working-directory: luals-docs-gen
       - run: mdbook build
         working-directory: docs
