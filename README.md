@@ -42,3 +42,14 @@ root:caculateLayout(nil, nil, yoga.Enums.Direction.LTR)
 loca left = child0.layout:getLeft();
 loca height = child0.layout:getHeight();
 ```
+
+## Contributing
+
+### Running locally
+
+1. Build the project locally using `luarocks make --tree=./dev --no-manifest luyoga-1.0-1.rockspec`
+2. Update `test.lua` with your code and run it with `luajit test.lua`
+
+### Writing tests
+
+TODO

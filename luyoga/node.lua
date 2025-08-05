@@ -1,7 +1,7 @@
 local ffi = require("ffi")
-local Style = require("style")
-local Layout = require("layout")
-local Enums = require("enums")
+local Style = require("luyoga.style")
+local Layout = require("luyoga.layout")
+local Enums = require("luyoga.enums")
 
 ---@class Node
 ---@field private ygNode table

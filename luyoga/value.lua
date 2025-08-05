@@ -1,5 +1,5 @@
 local ffi = require("ffi")
-local enums = require("enums")
+local enums = require("luyoga.enums")
 
 ---@class Value
 ---@field value number

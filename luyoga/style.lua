@@ -1,4 +1,4 @@
-local Value = require("value")
+local Value = require("luyoga.value")
 
 ---@package
 function setSize(kind)
