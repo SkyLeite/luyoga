@@ -12,7 +12,7 @@ jobs:
         uses: peaceiris/actions-mdbook@v2
         with:
           mdbook-version: 'latest'
-      - run: git clone https://github.com/emuell/luals-docs-gen.git $GITHUB_WORKSPACE/luals-docs-gen
+      - run: git clone https://github.com/emuell/luals-docs-gen.git $GITHUB_WORKSPACE
       - run: cargo run --release $GITHUB_WORKSPACE/luyoga $GITHUB_WORKSPACE/luyoga/docs/src
         working-directory: $GITHUB_WORKSPACE/luals-docs-gen
       - run: mdbook build
