@@ -1,0 +1,16 @@
+name: build-docs
+on: [push]
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+            path: "luyoga"
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+      - run: cargo install mdbook
+      - run: git clone git@github.com:emuell/luals-docs-gen.git
+      - run: cd luals-docs-gen
+      - run: cargo run --release $GITHUB_WORKSPACE/luyoga $GITHUB_WORKSPACE/luyoga/docs/src
+      - run: cd $GITHUB_WORKSPACE/luyoga/docs
+      - run: mdbook build
