@@ -32,13 +32,13 @@ root:insertChild(child1, 1)
 
 ### Laying out the tree
 
-```
+```lua
 root:caculateLayout(nil, nil, yoga.Enums.Direction.LTR)
 ```
 
 ### Reading layout results
 
-```
+```lua
 loca left = child0.layout:getLeft();
 loca height = child0.layout:getHeight();
 ```
