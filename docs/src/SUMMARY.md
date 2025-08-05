@@ -1,3 +1,6 @@
 # Summary
 
-- [Chapter 1](./chapter_1.md)
+# Reference Guide
+
+<!-- API TOC START -->
+<!-- API TOC END -->
