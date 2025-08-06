@@ -85,7 +85,7 @@ function Node:getChild(index)
 end
 
 ---@return number
-function Node:getChildCound()
+function Node:getChildCount()
     return yoga.YGNodeGetChildCount(self.ygNode)
 end
 
