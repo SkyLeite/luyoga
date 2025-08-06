@@ -12,7 +12,14 @@ end
 
 ffi.cdef(headerFile:read("a"))
 
-local dllpath = package.searchpath("libyogacore", package.cpath)
+local cpath = package.cpath
+if jit.OS == "OSX" then
+  cpath = cpath:gsub("%?%.so", "?.dylib")
+elseif jit.OS == "Windows" then
+  cpath = cpath:gsub("%?%.so", "?.dll")
+end
+
+local dllpath = package.searchpath("libyogacore", cpath)
 yoga = ffi.load(dllpath)
 
 local Enums = require("luyoga.enums")
