@@ -86,7 +86,7 @@ end
 
 ---@return number
 function Node:getChildCount()
-    return yoga.YGNodeGetChildCount(self.ygNode)
+    return tonumber(yoga.YGNodeGetChildCount(self.ygNode))
 end
 
 ---@return Node
