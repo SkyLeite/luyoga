@@ -39,8 +39,8 @@ root:caculateLayout(nil, nil, yoga.Enums.Direction.LTR)
 ### Reading layout results
 
 ```lua
-loca left = child0.layout:getLeft();
-loca height = child0.layout:getHeight();
+local left = child0.layout:getLeft();
+local height = child0.layout:getHeight();
 ```
 
 ## Contributing
