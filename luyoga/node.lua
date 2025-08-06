@@ -18,9 +18,9 @@ end
 ---@return Node
 function Node.from_cdata(node)
     local s = {
-        ygNode = ffi.gc(node, yoga.YGNodeFree),
+        ygNode = node,
         style = Style:new(node),
-        layout = Layout:new(node)
+        layout = Layout:new(node),
     }
     setmetatable(s, { __index = Node })
 
