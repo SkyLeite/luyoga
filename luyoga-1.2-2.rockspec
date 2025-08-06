@@ -30,6 +30,7 @@ build = {
     install = {
       lib = {
         "dist/libyogacore.so",
+        "dist/libyogacore.dylib",
         "dist/Yoga.h",
       },
     }
