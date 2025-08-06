@@ -12,8 +12,6 @@ end
 
 ffi.cdef(headerFile:read("a"))
 
-print(jit.OS)
-
 local cpath = package.cpath
 
 local headerPath = package.searchpath("Yoga", cpath)
@@ -25,23 +23,23 @@ elseif jit.OS == "Windows" then
 end
 
 local dllpath = package.searchpath("libyogacore", cpath)
-yoga = pcall(ffi.load, dllpath)
+status, yoga = pcall(ffi.load, dllpath)
 
-if yoga == nil then
+if status == false then
   -- Try loading dylib
   local ncpath = cpath:gsub("%?%.so", "?.dylib")
   local dllpath = package.searchpath("libyogacore", ncpath)
-  yoga = pcall(ffi.load, dllpath)
+  status, yoga = pcall(ffi.load, dllpath)
 end
 
-if yoga == nil then
+if status == false then
   -- Try loading dll
   local ncpath = cpath:gsub("%?%.so", "?.dll")
   local dllpath = package.searchpath("libyogacore", ncpath)
-  yoga = pcall(ffi.load, dllpath)
+  status, yoga = pcall(ffi.load, dllpath)
 end
 
-if yoga == nil then
+if status == false then
   error("Failed to load yoga")
 end
 
