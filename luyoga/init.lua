@@ -12,7 +12,12 @@ end
 
 ffi.cdef(headerFile:read("a"))
 
+print(jit.OS)
+
 local cpath = package.cpath
+
+local headerPath = package.searchpath("Yoga", cpath)
+
 if jit.OS == "OSX" then
   cpath = cpath:gsub("%?%.so", "?.dylib")
 elseif jit.OS == "Windows" then
@@ -20,7 +25,26 @@ elseif jit.OS == "Windows" then
 end
 
 local dllpath = package.searchpath("libyogacore", cpath)
-yoga = ffi.load(dllpath)
+yoga = pcall(ffi.load, dllpath)
+
+if yoga == nil then
+  -- Try loading dylib
+  local ncpath = cpath:gsub("%?%.so", "?.dylib")
+  local dllpath = package.searchpath("libyogacore", ncpath)
+  yoga = pcall(ffi.load, dllpath)
+end
+
+if yoga == nil then
+  -- Try loading dll
+  local ncpath = cpath:gsub("%?%.so", "?.dll")
+  local dllpath = package.searchpath("libyogacore", ncpath)
+  yoga = pcall(ffi.load, dllpath)
+end
+
+if yoga == nil then
+  error("Failed to load yoga")
+end
+
 
 local Enums = require("luyoga.enums")
 require("luyoga.util")
