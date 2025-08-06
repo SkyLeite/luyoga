@@ -60,7 +60,7 @@ end
 function Node:insertChild(child, index)
     assert(self.ygNode ~= child.ygNode, "Cannot set a node as its own child.")
 
-    yoga.YGNodeInsertChild(self.ygNode, child.ygNode, index or 0)
+    yoga.YGNodeInsertChild(self.ygNode, child.ygNode, calcIndex(index))
 end
 
 ---@param child Node
@@ -80,7 +80,7 @@ end
 
 ---@param index number
 function Node:getChild(index)
-    local node = yoga.YGNodeGetChild(self.ygNode, index)
+    local node = yoga.YGNodeGetChild(self.ygNode, calcIndex(index))
     return Node.from_cdata(node)
 end
 
