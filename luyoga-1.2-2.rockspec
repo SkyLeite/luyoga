@@ -1,6 +1,6 @@
 rockspec_format = "3.0"
 package = "Luyoga"
-version = "1.2-1"
+version = "1.2-2"
 source = {
    url = "git://github.com/SkyLeite/luyoga",
    tag = "v1.0"
@@ -30,6 +30,7 @@ build = {
     install = {
       lib = {
         "dist/libyogacore.so",
+        "dist/libyogacore.dylib",
         "dist/Yoga.h",
       },
     }
