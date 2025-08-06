@@ -1,6 +1,6 @@
 rockspec_format = "3.0"
 package = "Luyoga"
-version = "1.0-1"
+version = "1.1"
 source = {
    url = "git://github.com/SkyLeite/luyoga",
    tag = "v1.0"
@@ -14,7 +14,7 @@ description = {
    license = "LGPLv2.1"
 }
 dependencies = {
-   "lua >= 5.1, < 5.4"
+   "lua >= 5.1"
 }
 build = {
     type = "builtin",
