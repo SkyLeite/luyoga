@@ -1,10 +1,18 @@
 {
+  lib,
   stdenv,
   cmake,
   fetchFromGitHub,
   ninja,
   pkg-config,
 }:
+let
+    filename = if stdenv.isDarwin then
+        "libyogacore.dylib"
+    else
+        "libyogacore.so";
+
+in
 stdenv.mkDerivation {
   pname = "yoga";
   version = "1.0.0";
@@ -32,6 +40,9 @@ stdenv.mkDerivation {
       --replace-fail "add_library(yogacore STATIC" "add_library(yogacore SHARED"
 
     runHook postPatch
+  '' + lib.optionalString stdenv.isDarwin ''
+    substituteInPlace ./cmake/project-defaults.cmake \
+      --replace-fail "--gc-sections" "-dead_strip"
   '';
 
   configurePhase = ''
@@ -48,6 +59,7 @@ stdenv.mkDerivation {
 
   installPhase = ''
     mkdir -p $out/lib
-    cp ./build/yoga/libyogacore.so $out/lib/
+    
+    cp ./build/yoga/${filename} $out/lib/
   '';
 }
