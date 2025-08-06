@@ -1,9 +1,9 @@
 rockspec_format = "3.0"
 package = "Luyoga"
-version = "1.3-1"
+version = "1.3-2"
 source = {
    url = "git://github.com/SkyLeite/luyoga",
-   tag = "v1.3-1"
+   tag = "v1.3-2"
 }
 description = {
    summary = "Lua bindings for facebook/yoga, a render-agnostic layouting engine",
