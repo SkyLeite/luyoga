@@ -2,3 +2,5 @@
 result
 docs/src/API
 dev/
+*.src.rock
+lua_modules/
