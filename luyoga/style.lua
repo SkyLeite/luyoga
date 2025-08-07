@@ -50,57 +50,57 @@ function getSize(kind)
     end
 end
 
----@class Style
+---@class luyoga.Style
 ---@field protected ygNode table
 ---
----@field setFlexBasis fun(self: Style, flexBasis: number)
----@field setFlexBasisPercent fun(self: Style, flexBasis: number)
----@field setFlexBasisAuto fun(self: Style)
----@field setFlexBasisMaxContent fun(self: Style)
----@field setFlexBasisFitContent fun(self: Style)
----@field setFlexBasisStretch fun(self: Style)
+---@field setFlexBasis fun(self: luyoga.Style, flexBasis: number)
+---@field setFlexBasisPercent fun(self: luyoga.Style, flexBasis: number)
+---@field setFlexBasisAuto fun(self: luyoga.Style)
+---@field setFlexBasisMaxContent fun(self: luyoga.Style)
+---@field setFlexBasisFitContent fun(self: luyoga.Style)
+---@field setFlexBasisStretch fun(self: luyoga.Style)
 ---
----@field setWidth fun(self: Style, width: number)
----@field setWidthPercent fun(self: Style, width: number)
----@field setWidthAuto fun(self: Style)
----@field setWidthMaxContent fun(self: Style)
----@field setWidthFitContent fun(self: Style)
----@field setWidthStretch fun(self: Style)
+---@field setWidth fun(self: luyoga.Style, width: number)
+---@field setWidthPercent fun(self: luyoga.Style, width: number)
+---@field setWidthAuto fun(self: luyoga.Style)
+---@field setWidthMaxContent fun(self: luyoga.Style)
+---@field setWidthFitContent fun(self: luyoga.Style)
+---@field setWidthStretch fun(self: luyoga.Style)
 ---
----@field setMinWidth fun(self: Style, minWidth: number)
----@field setMinWidthPercent fun(self: Style, minWidth: number)
----@field setMinWidthAuto fun(self: Style)
----@field setMinWidthMaxContent fun(self: Style)
----@field setMinWidthFitContent fun(self: Style)
----@field setMinWidthStretch fun(self: Style)
+---@field setMinWidth fun(self: luyoga.Style, minWidth: number)
+---@field setMinWidthPercent fun(self: luyoga.Style, minWidth: number)
+---@field setMinWidthAuto fun(self: luyoga.Style)
+---@field setMinWidthMaxContent fun(self: luyoga.Style)
+---@field setMinWidthFitContent fun(self: luyoga.Style)
+---@field setMinWidthStretch fun(self: luyoga.Style)
 ---
----@field setMaxWidth fun(self: Style, maxWidth: number)
----@field setMaxWidthPercent fun(self: Style, maxWidth: number)
----@field setMaxWidthAuto fun(self: Style)
----@field setMaxWidthMaxContent fun(self: Style)
----@field setMaxWidthFitContent fun(self: Style)
----@field setMaxWidthStretch fun(self: Style)
+---@field setMaxWidth fun(self: luyoga.Style, maxWidth: number)
+---@field setMaxWidthPercent fun(self: luyoga.Style, maxWidth: number)
+---@field setMaxWidthAuto fun(self: luyoga.Style)
+---@field setMaxWidthMaxContent fun(self: luyoga.Style)
+---@field setMaxWidthFitContent fun(self: luyoga.Style)
+---@field setMaxWidthStretch fun(self: luyoga.Style)
 ---
----@field setHeight fun(self: Style, height: number)
----@field setHeightPercent fun(self: Style, height: number)
----@field setHeightAuto fun(self: Style)
----@field setHeightMaxContent fun(self: Style)
----@field setHeightFitContent fun(self: Style)
----@field setHeightStretch fun(self: Style)
+---@field setHeight fun(self: luyoga.Style, height: number)
+---@field setHeightPercent fun(self: luyoga.Style, height: number)
+---@field setHeightAuto fun(self: luyoga.Style)
+---@field setHeightMaxContent fun(self: luyoga.Style)
+---@field setHeightFitContent fun(self: luyoga.Style)
+---@field setHeightStretch fun(self: luyoga.Style)
 ---
----@field setMinHeight fun(self: Style, minHeight: number)
----@field setMinHeightPercent fun(self: Style, minHeight: number)
----@field setMinHeightAuto fun(self: Style)
----@field setMinHeightMaxContent fun(self: Style)
----@field setMinHeightFitContent fun(self: Style)
----@field setMinHeightStretch fun(self: Style)
+---@field setMinHeight fun(self: luyoga.Style, minHeight: number)
+---@field setMinHeightPercent fun(self: luyoga.Style, minHeight: number)
+---@field setMinHeightAuto fun(self: luyoga.Style)
+---@field setMinHeightMaxContent fun(self: luyoga.Style)
+---@field setMinHeightFitContent fun(self: luyoga.Style)
+---@field setMinHeightStretch fun(self: luyoga.Style)
 ---
----@field setMaxHeight fun(self: Style, maxHeight: number)
----@field setMaxHeightPercent fun(self: Style, maxHeight: number)
----@field setMaxHeightAuto fun(self: Style)
----@field setMaxHeightMaxContent fun(self: Style)
----@field setMaxHeightFitContent fun(self: Style)
----@field setMaxHeightStretch fun(self: Style)
+---@field setMaxHeight fun(self: luyoga.Style, maxHeight: number)
+---@field setMaxHeightPercent fun(self: luyoga.Style, maxHeight: number)
+---@field setMaxHeightAuto fun(self: luyoga.Style)
+---@field setMaxHeightMaxContent fun(self: luyoga.Style)
+---@field setMaxHeightFitContent fun(self: luyoga.Style)
+---@field setMaxHeightStretch fun(self: luyoga.Style)
 local Style = {}
 Style.__index = Style
 
@@ -128,7 +128,7 @@ function Style:new(ygNode)
     return s
 end
 
----@param direction Direction
+---@param direction luyoga.Direction
 function Style:setDirection(direction)
     yoga.YGNodeStyleSetDirection(self.ygNode, direction)
 end
@@ -138,92 +138,92 @@ function Style:getDirection()
     return yoga.YGNodeStyleSetDirection(self.ygNode)
 end
 
----@param direction FlexDirection
+---@param direction luyoga.FlexDirection
 function Style:setFlexDirection(direction)
     yoga.YGNodeStyleSetFlexDirection(self.ygNode, direction)
 end
 
----@return FlexDirection
+---@return luyoga.FlexDirection
 function Style:getFlexDirection()
     return yoga.YGNodeStyleGetFlexDirection(self.ygNode)
 end
 
----@param justifyContent Justify
+---@param justifyContent luyoga.Justify
 function Style:setJustifyContent(justifyContent)
     yoga.YGNodeStyleSetJustifyContent(self.ygNode, justifyContent)
 end
 
----@return Justify
+---@return luyoga.Justify
 function Style:getJustifyContent()
     return yoga.YGNodeStyleGetJustifyContent(self.ygNode)
 end
 
----@param alignContent Align
+---@param alignContent luyoga.Align
 function Style:setAlignContent(alignContent)
     yoga.YGNodeStyleSetAlignContent(self.ygNode, alignContent)
 end
 
----@return Align
+---@return luyoga.Align
 function Style:getAlignContent()
     return yoga.YGNodeStyleGetAlignContent(self.ygNode)
 end
 
----@param alignItems Align
+---@param alignItems luyoga.Align
 function Style:setAlignItems(alignItems)
     yoga.YGNodeStyleSetAlignItems(self.ygNode, alignItems)
 end
 
----@return Align
+---@return luyoga.Align
 function Style:getAlignItems()
     return yoga.YGNodeStyleGetAlignItems(self.ygNode)
 end
 
----@param alignSelf Align
+---@param alignSelf luyoga.Align
 function Style:setAlignSelf(alignSelf)
     yoga.YGNodeStyleSetAlignSelf(self.ygNode, alignSelf)
 end
 
----@return Align
+---@return luyoga.Align
 function Style:getAlignSelf()
     return yoga.YGNodeStyleGetAlignSelf(self.ygNode)
 end
 
----@param positionType PositionType
+---@param positionType luyoga.PositionType
 function Style:setPositionType(positionType)
     yoga.YGNodeStyleSetPositionType(self.ygNode, positionType)
 end
 
----@return PositionType
+---@return luyoga.PositionType
 function Style:getPositionType()
     return yoga.YGNodeStyleGetPositionType(self.ygNode)
 end
 
----@param flexWrap Wrap
+---@param flexWrap luyoga.Wrap
 function Style:setFlexWrap(flexWrap)
     yoga.YGNodeStyleSetFlexWrap(self.ygNode, flexWrap)
 end
 
----@return Wrap
+---@return luyoga.Wrap
 function Style:getFlexWrap()
     return yoga.YGNodeStyleGetFlexWrap(self.ygNode)
 end
 
----@param overflow Overflow
+---@param overflow luyoga.Overflow
 function Style:setOverflow(overflow)
     yoga.YGNodeStyleSetOverflow(self.ygNode, overflow)
 end
 
----@return Overflow
+---@return luyoga.Overflow
 function Style:getOverflow()
     return yoga.YGNodeStyleGetOvevlow(self.ygNode)
 end
 
----@param display Display
+---@param display luyoga.Display
 function Style:setDisplay(display)
     yoga.YGNodeStyleSetDisplay(self.ygNode, display)
 end
 
----@return Display
+---@return luyoga.Display
 function Style:getDisplay()
     return yoga.YGNodeStyleGetDisplay(self.ygNode)
 end
@@ -258,87 +258,87 @@ function Style:getFlexShrink()
     return yoga.YGNodeStyleGetFlexShrink(self.ygNode)
 end
 
----@param edge Edge
+---@param edge luyoga.Edge
 ---@param margin number
 function Style:setMargin(edge, margin)
     yoga.YGNodeStyleSetMargin(self.ygNode, edge, margin)
 end
 
----@param edge Edge
+---@param edge luyoga.Edge
 ---@param margin number
 function Style:setMarginPercent(edge, margin)
     yoga.YGNodeStyleSetMarginPercent(self.ygNode, edge, margin)
 end
 
----@param edge Edge
+---@param edge luyoga.Edge
 function Style:setMarginAuto(edge)
     yoga.YGNodeStyleSetMargin(self.ygNode, edge)
 end
 
----@param edge Edge
+---@param edge luyoga.Edge
 ---@return Value
 function Style:getMargin(edge)
     local r = yoga.YGNodeStyleGetMargin(self.ygNode, edge)
     return Value:from_cdata(r)
 end
 
----@param edge Edge
+---@param edge luyoga.Edge
 ---@param padding number
 function Style:setPadding(edge, padding)
     yoga.YGNodeStyleSetPadding(self.ygNode, edge, padding)
 end
 
----@param edge Edge
+---@param edge luyoga.Edge
 ---@param padding number
 function Style:setPaddingPercent(edge, padding)
     yoga.YGNodeStyleSetPaddingPercent(self.ygNode, edge, padding)
 end
 
----@param edge Edge
+---@param edge luyoga.Edge
 ---@return Value
 function Style:getPadding(edge)
     local r = yoga.YGNodeStyleGetPadding(self.ygNode, edge)
     return Value:from_cdata(r)
 end
 
----@param edge Edge
+---@param edge luyoga.Edge
 ---@param border number
 function Style:setBorder(edge, border)
     yoga.YGNodeStyleSetBorder(self.ygNode, edge, border)
 end
 
----@param edge Edge
+---@param edge luyoga.Edge
 ---@return Value
 function Style:getBorder(edge)
     local r = yoga.YGNodeStyleGetBorder(self.ygNode, edge)
     return Value:from_cdata(r)
 end
 
----@param gutter Gutter
+---@param gutter luyoga.Gutter
 ---@param gapLength number
 function Style:setGap(edge, gutter, gapLength)
     yoga.YGNodeStyleSetGap(self.ygNode, gutter, gapLength)
 end
 
----@param gutter Gutter
+---@param gutter luyoga.Gutter
 ---@param gapLength number
 function Style:setGapPercent(edge, gutter, gapLength)
     yoga.YGNodeStyleSetGapPercent(self.ygNode, gutter, gapLength)
 end
 
----@param gutter Gutter
+---@param gutter luyoga.Gutter
 ---@return Value
 function Style:getGap(gutter)
     local r = yoga.YGNodeStyleGetGap(self.ygNode, gutter)
     return Value:from_cdata(r)
 end
 
----@param boxSizing BoxSizing
+---@param boxSizing luyoga.BoxSizing
 function Style:setBoxSizing(boxSizing)
     yoga.YGNodeStyleSetBoxSizing(self.ygNode, boxSizing)
 end
 
----@return BoxSizing
+---@return luyoga.BoxSizing
 function Style:getBoxSizing()
     return yoga.YGNodeStyleGetBoxSizing(self.ygNode)
 end

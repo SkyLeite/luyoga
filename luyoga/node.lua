@@ -3,19 +3,19 @@ local Style = require("luyoga.style")
 local Layout = require("luyoga.layout")
 local Enums = require("luyoga.enums")
 
----@class Node
+---@class luyoga.Node
 ---@field private ygNode table
----@field style Style
----@field layout Layout
+---@field style luyoga.Style
+---@field layout luyoga.Layout
 local Node = {}
 
----@return Node
+---@return luyoga.Node
 function Node.new()
     local node = yoga.YGNodeNew()
     return Node.from_cdata(node)
 end
 
----@return Node
+---@return luyoga.Node
 function Node.from_cdata(node)
     local s = {
         ygNode = node,
@@ -33,7 +33,7 @@ end
 
 ---@param availableWidth number?
 ---@param availableHeight number?
----@param ownerDirection Direction
+---@param ownerDirection luyoga.Direction
 function Node:calculateLayout(availableWidth, availableHeight, ownerDirection)
     yoga.YGNodeCalculateLayout(self.ygNode, availableWidth or Enums.YGUndefined, availableHeight or Enums.YGUndefined, ownerDirection)
 end
@@ -55,7 +55,7 @@ function Node:markDirty()
     return yoga.YGNodeMarkDirty(self.ygNode)
 end
 
----@param child Node
+---@param child luyoga.Node
 ---@param index number
 function Node:insertChild(child, index)
     assert(self.ygNode ~= child.ygNode, "Cannot set a node as its own child.")
@@ -63,13 +63,13 @@ function Node:insertChild(child, index)
     yoga.YGNodeInsertChild(self.ygNode, child.ygNode, calcIndex(index))
 end
 
----@param child Node
+---@param child luyoga.Node
 ---@param index number
 function Node:swapChild(child, index)
     yoga.YGNodeSwapChild(self.ygNode, child.ygNode, index or 0)
 end
 
----@param child Node
+---@param child luyoga.Node
 function Node:removeChild(child)
     yoga.YGNodeRemoveChild(self.ygNode, child.ygNode)
 end
@@ -89,24 +89,24 @@ function Node:getChildCount()
     return tonumber(yoga.YGNodeGetChildCount(self.ygNode))
 end
 
----@return Node
+---@return luyoga.Node
 function Node:getOwner()
     local node = yoga.YGNodeGetOwner(self.ygNode)
     return Node.from_cdata(node)
 end
 
----@return Node
+---@return luyoga.Node
 function Node:getParent()
     local node = yoga.YGNodeGetParent(self.ygNode)
     return Node.from_cdata(node)
 end
 
----@param nodeType NodeType
+---@param nodeType luyoga.NodeType
 function Node:setNodeType(nodeType)
     yoga.YGNodeSetNodeType(self.ygNode, nodeType)
 end
 
----@param nodeType NodeType
+---@param nodeType luyoga.NodeType
 function Node:getNodeType(nodeType)
     return yoga.YGNodeGetNodeType(self.ygNode)
 end
@@ -121,8 +121,8 @@ function Node:getAlwaysFormsContainingBlock()
     return yoga.YGNodeSetAlwaysFormsContainingBlock(self.ygNode)
 end
 
----@param dstNode Node
----@param srcNode Node
+---@param dstNode luyoga.Node
+---@param srcNode luyoga.Node
 function Node:copyStyle(dstNode, srcNode)
     yoga.YGNodeCopyStyle(dstNode, srcNode)
 end

@@ -1,15 +1,15 @@
 local ffi = require("ffi")
 local enums = require("luyoga.enums")
 
----@class Value
+---@class luyoga.Value
 ---@field value number
----@field unit Unit
+---@field unit luyoga.Unit
 local Value = {}
 Value.__index = Value
 
 ---@param value any
----@param unit Unit
----@return Value
+---@param unit luyoga.Unit
+---@return luyoga.Value
 function Value:new(value, unit)
     cdata = ffi.new("YGValue", { value = value, unit = unit })
     return Value:from_cdata(cdata)

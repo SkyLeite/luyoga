@@ -1,6 +1,6 @@
 local ffi = require("ffi")
 
----@enum FlexDirection
+---@enum luyoga.FlexDirection
 local FlexDirection = {
     Column = ffi.C.YGFlexDirectionColumn,
     ColumnReverse = ffi.C.YGFlexDirectionColumnReverse,
@@ -8,14 +8,14 @@ local FlexDirection = {
     RowReverse = ffi.C.YGFlexDirectionRowReverse,
 }
 
----@enum Direction
+---@enum luyoga.Direction
 local Direction = {
     Inherit = ffi.C.YGDirectionInherit,
     LTR = ffi.C.YGDirectionLTR,
     RTL = ffi.C.YGDirectionRTL,
 }
 
----@enum Align
+---@enum luyoga.Align
 local Align = {
     Auto = ffi.C.YGAlignAuto,
     FlexStart = ffi.C.YGAlignFlexStart,
@@ -28,7 +28,7 @@ local Align = {
     SpaceEvenly = ffi.C.YGAlignSpaceEvenly,
 }
 
----@enum Justify
+---@enum luyoga.Justify
 local Justify = {
     FlexStart = ffi.C.YGJustifyFlexStart,
     Center = ffi.C.YGJustifyCenter,
@@ -38,7 +38,7 @@ local Justify = {
     SpaceEvenly = ffi.C.YGJustifySpaceEvenly,
 }
 
----@enum Edge
+---@enum luyoga.Edge
 local Edge = {
     Left = ffi.C.YGEdgeLeft,
     Top = ffi.C.YGEdgeTop,
@@ -51,7 +51,7 @@ local Edge = {
     All = ffi.C.YGEdgeAll
 }
 
----@enum Unit
+---@enum luyoga.Unit
 local Unit = {
     Undefined = ffi.C.YGUnitUndefined,
     Point = ffi.C.YGUnitPoint,
@@ -62,48 +62,48 @@ local Unit = {
     Stretch = ffi.C.YGUnitStretch
 }
 
----@enum Gutter
+---@enum luyoga.Gutter
 local Gutter = {
     Column = ffi.C.YGGutterColumn,
     Row = ffi.C.YGGutterRow,
     All = ffi.C.YGGutterAll,
 }
 
----@enum PositionType
+---@enum luyoga.PositionType
 local PositionType = {
     Static = ffi.C.YGPositionTypeStatic,
     Relative = ffi.C.YGPositionTypeRelative,
     Absolute = ffi.C.YGPositionTypeAbsolute,
 }
 
----@enum Wrap
+---@enum luyoga.Wrap
 local Wrap = {
     NoWrap = ffi.C.YGWrapNoWrap,
     Wrap = ffi.C.YGWrapWrap,
     WrapReverse = ffi.C.YGWrapWrapReverse,
 }
 
----@enum Overflow
+---@enum luyoga.Overflow
 local Overflow = {
     Visible = ffi.C.YGOverflowVisible,
     Hidden = ffi.C.YGOverflowHidden,
     Scroll = ffi.C.YGOverflowScroll,
 }
 
----@enum Display
+---@enum luyoga.Display
 local Display = {
     Flex = ffi.C.YGDisplayFlex,
     None = ffi.C.YGDisplayNone,
     Contents = ffi.C.YGDisplayContents,
 }
 
----@enum BoxSizing
+---@enum luyoga.BoxSizing
 local BoxSizing = {
     BorderBox = ffi.C.YGBoxSizingBorderBox,
     ContentBox = ffi.C.YGBoxSizingContentBox,
 }
 
----@enum NodeType
+---@enum luyoga.NodeType
 local NodeType = {
     Default = ffi.C.YGNodeTypeDefault,
     Text = ffi.C.YGNodeTypeText,

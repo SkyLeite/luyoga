@@ -1,8 +1,8 @@
----@class Layout
+---@class luyoga.Layout
 ---@field private ygNode table
 local Layout = {}
 
----@return Layout
+---@return luyoga.Layout
 function Layout:new(ygNode)
     local s = {
         ygNode = ygNode,
@@ -52,19 +52,19 @@ function Layout:getHadOverflow()
     return yoga.YGNodeLayoutGetHadOverflow(self.ygNode)
 end
 
----@param edge Edge
+---@param edge luyoga.Edge
 ---@return number
 function Layout:getMargin(edge)
     return yoga.YGNodeLayoutGetMargin(self.ygNode, edge)
 end
 
----@param edge Edge
+---@param edge luyoga.Edge
 ---@return number
 function Layout:getBorder(edge)
     return yoga.YGNodeLayoutGetBorder(self.ygNode, edge)
 end
 
----@param edge Edge
+---@param edge luyoga.Edge
 ---@return number
 function Layout:getPadding(edge)
     return yoga.YGNodeLayoutGetPadding(self.ygNode, edge)
