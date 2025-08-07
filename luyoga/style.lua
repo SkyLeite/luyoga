@@ -44,7 +44,7 @@ end
 
 ---@package
 function getSize(kind)
-    return function (style)
+    return function(style)
         local r = yoga["YGNodeStyleGet" .. kind](style.ygNode)
         return Value:from_cdata(r)
     end
@@ -104,7 +104,7 @@ end
 local Style = {}
 Style.__index = Style
 
-local sizes = {"FlexBasis", "Width", "Height", "MinWidth", "MinHeight", "MaxWidth", "MaxHeight"}
+local sizes = { "FlexBasis", "Width", "Height", "MinWidth", "MinHeight", "MaxWidth", "MaxHeight" }
 
 ---@param ygNode table
 ---@return Style
@@ -256,6 +256,29 @@ end
 ---@return number
 function Style:getFlexShrink()
     return yoga.YGNodeStyleGetFlexShrink(self.ygNode)
+end
+
+---@param edge luyoga.Edge
+---@param position number
+function Style:setPosition(edge, position)
+    yoga.YGNodeStyleSetPosition(self.ygNode, edge, position)
+end
+
+---@param edge luyoga.Edge
+---@param position number
+function Style:setPositionPercent(edge, position)
+    yoga.YGNodeStyleSetPositionPercent(self.ygNode, edge, position)
+end
+
+---@param edge luyoga.Edge
+function Style:getPosition(edge)
+    local r = yoga.YGNodeStyleGetPosition(self.ygNode, edge)
+    return Value:from_cdata(r)
+end
+
+---@param edge luyoga.Edge
+function Style:setPositionAuto(edge)
+    yoga.YGNodeStyleSetPositionAuto(self.ygNode, edge)
 end
 
 ---@param edge luyoga.Edge
