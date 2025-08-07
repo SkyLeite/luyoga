@@ -25,6 +25,7 @@
         devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
             luajit
+            luajitPackages.luarocks
             pkg-config
             yoga
           ];
